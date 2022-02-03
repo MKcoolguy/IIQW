@@ -6,17 +6,16 @@
 </p>
 Description.....
 
-##Requires
+## Requires
 Flask
 
 Anaconda:
-'''
+```
 conda install -c conda-forge flask
-'''
+```
 pip:
-'''
+```
 pip install Flask
-'''
-
-##Authors
+```
+## Authors
 Constance Yang, Kristoffer Hendricks, Matteo Kitic, Robert Sima
