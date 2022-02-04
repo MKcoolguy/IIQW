@@ -7,15 +7,20 @@
 Description.....
 
 ## Requires
-Flask
+Flask, Bootstrap
+<p>
+You're only able to run the application from app.py
+</p> 
 
 Anaconda:
 ```
 conda install -c conda-forge flask
+conda install -c conda-forge flask-bootstrap
 ```
 pip:
 ```
 pip install Flask
+pip install flask-bootstrap
 ```
 ## Authors
 Constance Yang, Kristoffer Hendricks, Matteo Kitic, Robert Sima
