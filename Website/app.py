@@ -7,7 +7,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 #Use route() to tell flask what url should trigger our function
-#The below function returns the message we want to display in the user's browser
+#The below function returns the html file we want to display in the user's browser
 #Default content type is HTML
 @app.route("/")
 def index():
