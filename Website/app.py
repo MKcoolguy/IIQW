@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 #YOU CAN ONLY RUN THE APPLICATION FROM HERE
 
@@ -10,8 +10,8 @@ app = Flask(__name__)
 #The below function returns the message we want to display in the user's browser
 #Default content type is HTML
 @app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+def index():
+    return render_template('index.html')
 
 
 #app.run() deploys the website
