@@ -6,7 +6,7 @@ import os
 config = {
     "apiKey": "AIzaSyDW6j3T5zqNfpRHQrYZXk12hICYbzZzoxk",
     "authDomain": "iiqw-2ab5f.firebaseapp.com",
-    "databaseURL": "", #NEED # TODO: add databaseURL
+    "databaseURL": "https://iiqw-2ab5f-default-rtdb.firebaseio.com/", #NEED # TODO: add databaseURL
     "projectId": "iiqw-2ab5f",
     "storageBucket": "iiqw-2ab5f.appspot.com",
     "messagingSenderId": "260325577865",
