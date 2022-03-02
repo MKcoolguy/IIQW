@@ -3,89 +3,39 @@
 
 <head>
 <title>Inspirational Quote Website</title>
-<style>
-body
-{
-	text-align:center;
-}
-.borders
-{
-	border: 1px solid black;
-}
-td 
-{
-  padding: 15px;
-  width: 33%;
-}
-table
-{
-	width:75%;
-	height: 500px;
-	margin-left: auto;
-	margin-right: auto;	
-}
-.receive
-{
-	background-color: #ABDBEF;
-}
-.info
-{
-	background-color: #0FA0B0;
-}
-.login
-{
-	background-color: #ABDBEF;
-}
-.receive:hover
-{
-	background-color: #E79796;
-	transition: all .5s ease;
-}
-.info:hover
-{
-	background-color: #FFB284;
-	transition: all .5s ease;
-}
-.login:hover
-{
-	background-color: #E79796;
-	transition: all .5s ease;
-}
-
-</style>
+<link href = "styles.css" rel = "stylesheet">
 </head>
 
 <body>
+<nav>
+<ul>
+	<li class = "bold">The Bionic Collaborative</li>
+	<li>Sign in
+    	<ul>
+        	<li><a href = "other/demo_login.html">Login</a></li>
+            <li><a href = "other/demo_signup.html">Sign Up!</a></li>
+        </ul>
+    </li>
+	<li><a href="other/demo_upload_file.html">Submit a quote</a></li>
+	<li><a href = "other/demo_quote.html">Generate quote</a></li>
+	<li>Preferences</li>
+</ul>
+</nav>
+<br>
+<h1 class="bold">The Bionic Collaborative</h1>
+<br>
+<h2>A collaborative project combining human and artificial intelligence quotes</h2>
+<br>
+<input class = "textSize" type= "text" placeholder="Search for a quote..."> 
+<input class = "submitSize" type="submit">
+<br>
+<br>
 
-<h1>Welcome! Prepare to be inspired.</h1>
+<div class="box">This is an example box A</div>
+<div class="box">This is an example box B</div>
+<div class="box">This is an example box C</div>
 
-<table class="borders">
-<tr>
-	<th class="borders" colspan="3">Select one of the options below!</th>
-</tr>
-<tr>
-	<td class="receive">
-		Welcome! Get your quote <a href="demo_quote.html">here</a>
-	</td>
-	<td class="info">
-		<h1>What is this website?</h1>
-		<p>Well you see, this website is able to generate inspirational or motivational quotes
-			depending on your preferences. </p>
-		<p>Are you new here? Click <a href="demo_signup.html">here!</a></p>
-	</td>
-	<td class="login">
-		<p>Returning member?</p> 
-		Login <a href="demo_login.html"> here </a>
-		<p>or</p>
-		<a href="demo_upload_file.html">Submit</a> a quote!
-	</td>
-	
-</tr>
-<tr>
-	<th class="borders" colspan="3">Project created by: Kristoffer Hendricks, Matteo Kitic, Robert Sima, Constance Yang</th>
-</tr>
-
-</table>
+<footer>Project created by: Kristoffer Hendricks, Matteo Kitic, Robert Sima, Constance Yang</footer>
 
 </body>
 </html>
