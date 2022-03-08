@@ -3,7 +3,7 @@
 
 <head>
 <title>Inspirational Quote Website</title>
-<link href = "styles.css" rel = "stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 
 <body>
@@ -12,12 +12,12 @@
 	<li class = "bold">The Bionic Collaborative</li>
 	<li>Sign in
     	<ul>
-        	<li><a href = "other/demo_login.html">Login</a></li>
-            <li><a href = "other/demo_signup.html">Sign Up!</a></li>
+        	<li><a href="{{ url_for('demo_login') }}">Login</a></li>
+        	<li><a href="{{ url_for('demo_signup') }}">Sign up</a></li>
         </ul>
     </li>
-	<li><a href="other/demo_upload_file.html">Submit a quote</a></li>
-	<li><a href = "other/demo_quote.html">Generate quote</a></li>
+        	<li><a href="{{ url_for('demo_upload') }}">Submit a quote</a></li>
+        	<li><a href="{{ url_for('demo_quote') }}">Generate quote</a></li>
 	<li>Preferences</li>
 </ul>
 </nav>
