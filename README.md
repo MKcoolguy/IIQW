@@ -27,6 +27,7 @@ pip:
 pip install Flask
 pip install flask-bootstrap
 pip install requirements.txt
+pip install pyrebase
 ```
 ## Authors
 Constance Yang, Kristoffer Hendricks, Matteo Kitic, Robert Sima
