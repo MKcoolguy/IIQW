@@ -1,6 +1,22 @@
-from flask import Flask, render_template
+import pyrebase
+from flask import render_template, request, redirect, session, Flask
+import os
 
 # YOU CAN ONLY RUN THE APPLICATION FROM HERE
+
+
+config = {
+    "apiKey": "AIzaSyDW6j3T5zqNfpRHQrYZXk12hICYbzZzoxk",
+    "authDomain": "iiqw-2ab5f.firebaseapp.com",
+    "databaseURL": "https://iiqw-2ab5f-default-rtdb.firebaseio.com/",
+    "projectId": "iiqw-2ab5f",
+    "storageBucket": "iiqw-2ab5f.appspot.com",
+    "messagingSenderId": "260325577865",
+    "appId": "1:260325577865:web:a1969fa00e43030955e258"
+}
+
+firebase = pyrebase.initialize_app(config)
+auth = firebase.auth()
 
 # Argument is the name of the application's module or package. __name__ is a convenient shortcut for this.
 # This is needed so flask knows where to look for resources such as templates and static files.
@@ -14,20 +30,37 @@ app = Flask(__name__)
 def demo():
     return render_template('demo.html')
 
-
-@app.route('/Website/templates/demo_login')
+# User Login and authentication
+@app.route('/demo_login', methods = ['GET','POST'])
 def demo_login():
+    if (request.method == 'POST'):
+            email = request.form['name']
+            password = request.form['password']
+            try:
+                auth.sign_in_with_email_and_password(email, password)
+                #user_id = auth.get_account_info(user['idToken'])
+                #session['usr'] = user_id
+                return render_template('demo.html')
+            except:
+                unsuccessful = 'Please check your credentials'
+                return render_template('demo_login.html', umessage=unsuccessful)
     return render_template('demo_login.html')
 
 
-@app.route('/Website/templates/demo_signup')  # sign up page
+# Create account page
+@app.route('/demo_signup', methods = ['GET','POST'])
 def demo_signup():
+    if (request.method == 'POST'):
+            email = request.form['name']
+            password = request.form['password']
+            auth.create_user_with_email_and_password(email, password)
+            return render_template('demo.html')
     return render_template('demo_signup.html')
 
 
 @app.route('/Website/templates/demo_upload')  # upload page
 def demo_upload():
-    return render_template('demo_upload_file.html')
+    return render_template('/Website/templates/demo_signup')
 
 
 @app.route('/Website/templates/demo_quote')  # generate quote page

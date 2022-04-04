@@ -30,25 +30,38 @@ td
 </head>
 
 <body>
-<h1>Welcome back! Login here:</h1>
-<form>
-<table>
-<tr><td>Username: <input type="text">
-</td>
-</tr>
-<tr>
-<td>
-Password: <input type="password"> </td> </tr>
+	<div class="jumbotron">
+        <h1 class="display-4">IIQW</h1>
+        <hr class="my-4">
+        {% if smessage %}
+          <div class="alert alert-success">
+            {{ smessage }}
+          </div>
+        {% endif %}
+        {% if umessage %}
+          <div class="alert alert-danger">
+            {{ umessage }}
+          </div>
+        {% endif %}
+        <form action="/demo_login" method="post">
+            <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" name="name"  placeholder="Enter email">
+            </div>
+            <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        </form>
 
-<tr><td><input type="checkbox">Remember my password</td></tr>
-
-<tr><td>
-<input type="submit"> 
-<button onclick="location.href='demo.html'" type="button">Go Back</button>
-</td></tr>
-
-</table>
-</form>
-
+        <div class="row">
+          <div class="col-sm">
+            <a href="/forgot_password" class="text-decoration-none">Forgot Password</a>
+          </div>
+          <div class="col-sm">
+            <a href="/demo_signup" class="text-decoration-none">Create Account</a>
+          </div>
+        </div>
 </body>
 </html>
