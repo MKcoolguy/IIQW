@@ -30,31 +30,32 @@ app = Flask(__name__)
 def demo():
     return render_template('demo.html')
 
+
 # User Login and authentication
-@app.route('/demo_login', methods = ['GET','POST'])
+@app.route('/demo_login', methods=['GET', 'POST'])
 def demo_login():
     if (request.method == 'POST'):
-            email = request.form['name']
-            password = request.form['password']
-            try:
-                auth.sign_in_with_email_and_password(email, password)
-                #user_id = auth.get_account_info(user['idToken'])
-                #session['usr'] = user_id
-                return render_template('demo.html')
-            except:
-                unsuccessful = 'Please check your credentials'
-                return render_template('demo_login.html', umessage=unsuccessful)
+        email = request.form['name']
+        password = request.form['password']
+        try:
+            auth.sign_in_with_email_and_password(email, password)
+            # user_id = auth.get_account_info(user['idToken'])
+            # session['usr'] = user_id
+            return render_template('demo.html')
+        except:
+            unsuccessful = 'Please check your credentials'
+            return render_template('demo_login.html', umessage=unsuccessful)
     return render_template('demo_login.html')
 
 
 # Create account page
-@app.route('/demo_signup', methods = ['GET','POST'])
+@app.route('/demo_signup', methods=['GET', 'POST'])
 def demo_signup():
     if (request.method == 'POST'):
-            email = request.form['name']
-            password = request.form['password']
-            auth.create_user_with_email_and_password(email, password)
-            return render_template('demo.html')
+        email = request.form['name']
+        password = request.form['password']
+        auth.create_user_with_email_and_password(email, password)
+        return render_template('demo.html')
     return render_template('demo_signup.html')
 
 
@@ -66,6 +67,19 @@ def demo_upload():
 @app.route('/Website/templates/demo_quote')  # generate quote page
 def demo_quote():
     return render_template('demo_quote.html')
+
+
+@app.after_request
+def add_header(r):
+    """
+    Add headers to both force latest IE rendering engine or Chrome Frame,
+    and also to cache the rendered page for 10 minutes.
+    """
+    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    r.headers["Pragma"] = "no-cache"
+    r.headers["Expires"] = "0"
+    r.headers['Cache-Control'] = 'public, max-age=0'
+    return r
 
 
 # app.run() deploys the website

@@ -2,7 +2,9 @@ body
 {
 	text-align:center;
 	color: #ffffff;
-	background-color: #000000;
+	background-image: linear-gradient(black 20%, #464444 50%, #000000 80%);
+	background-attachment: fixed;
+
 	font-family: Helvetica, sans-serif;
 }
 
@@ -25,7 +27,7 @@ body
 
 .box
 {
-	background-color: #C0C0C0;
+	background-color: #605f5f;
 	display: inline-block;
 	padding: 75px;
 }
@@ -36,8 +38,8 @@ footer
 	bottom: 0;
 }
 
-nav
-	{background-color: #000000;
+nav {
+	/*background-color: #000000;*/
     width: 80%;
     margin: auto;
     letter-spacing: 0.1em;
@@ -54,9 +56,12 @@ nav li
 nav a
 	{text-decoration: none;
     display: block;}
+
 nav ul ul
 	{position: absolute;
-    background-color: #000000;
+    /*background-color: #000000;*/
+	/*background-image: linear-gradient(black, grey, black);*/
+
     padding: 0;
     text-align: left;
     display: none;}

@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
 <title>Login</title>
 <style>
 body
 {
 	font-family: Helvetica, sans-serif;
 	text-align: center;
-	color: #ffffff;
-	background-color: #000000;
 }
 table
 {
 	width:50%;
 	margin-left: auto;
-	margin-right: auto;	
-	border: 1px solid black;
-	background-color: #000000;
+	margin-right: auto;
 }
 
 td 
@@ -31,7 +28,7 @@ td
 
 <body>
 	<div class="jumbotron">
-        <h1 class="display-4">IIQW</h1>
+        <h1 class="display-4">Log in</h1>
         <hr class="my-4">
         {% if smessage %}
           <div class="alert alert-success">
@@ -63,5 +60,6 @@ td
             <a href="/demo_signup" class="text-decoration-none">Create Account</a>
           </div>
         </div>
+    </div>
 </body>
 </html>
