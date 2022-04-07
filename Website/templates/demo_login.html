@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
 <title>Login</title>
-<style>
-body
-{
-	font-family: Helvetica, sans-serif;
-	text-align: center;
-}
-table
-{
-	width:50%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-td 
-{
-  padding: 15px;
-  width: 15%;
-}
-
-</style>
+{#<style>#}
+{#body#}
+{#{#}
+{#	font-family: Helvetica, sans-serif;#}
+{#	text-align: center;#}
+{#}#}
+{#table#}
+{#{#}
+{#	width:50%;#}
+{#	margin-left: auto;#}
+{#	margin-right: auto;#}
+{#}#}
+{##}
+{#td #}
+{#{#}
+{#  padding: 15px;#}
+{#  width: 15%;#}
+{#}#}
+{##}
+{#</style>#}
 </head>
 
 <body>
+
+<nav>
+<ul>
+	<li class = "bold"> <a href="/">The Bionic Collaborative</a> </li>
+	<li><a href="/demo_login">Login</a></li>
+{#    	<ul>#}
+{#        	<li><a href="/demo_login">Login</a></li>#}
+{#        	<li><a href="/demo_signup">Sign up</a></li>#}
+{#        </ul>#}
+    </li>
+        	<li><a href="{{ url_for('demo_upload') }}">Submit a quote</a></li>
+        	<li><a href="{{ url_for('demo_quote') }}">Generate quote</a></li>
+	<li>Preferences</li>
+</ul>
+
+</nav>
+
 	<div class="jumbotron">
         <h1 class="display-4">Log in</h1>
-        <hr class="my-4">
+{#        <hr class="my-4"> commented out to ignore line#}
         {% if smessage %}
           <div class="alert alert-success">
             {{ smessage }}

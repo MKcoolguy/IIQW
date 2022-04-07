@@ -51,7 +51,7 @@ def demo_login():
 # Create account page
 @app.route('/demo_signup', methods=['GET', 'POST'])
 def demo_signup():
-    if (request.method == 'POST'):
+    if request.method == 'POST':
         email = request.form['name']
         password = request.form['password']
         auth.create_user_with_email_and_password(email, password)
@@ -59,12 +59,12 @@ def demo_signup():
     return render_template('demo_signup.html')
 
 
-@app.route('/Website/templates/demo_upload')  # upload page
+@app.route('/demo_upload')  # upload page
 def demo_upload():
-    return render_template('/Website/templates/demo_signup')
+    return render_template('demo_upload_file.html')
 
 
-@app.route('/Website/templates/demo_quote')  # generate quote page
+@app.route('/demo_quote')  # generate quote page
 def demo_quote():
     return render_template('demo_quote.html')
 

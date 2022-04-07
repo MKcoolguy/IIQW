@@ -16,8 +16,19 @@ body
 
 .submitSize
 {
-	height: 40px;
-	width: 100px;
+    background-color: #ffffff;
+    border: none;
+    color: #000000;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 6px;
+	/*height: 40px;*/
+	/*width: 100px;*/
+
 }
 
 .bold
@@ -30,6 +41,20 @@ body
 	background-color: #605f5f;
 	display: inline-block;
 	padding: 75px;
+}
+
+.button {
+    background-color: #ffffff;
+    border: none;
+    color: #000000;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 6px;
+
 }
 
 footer
