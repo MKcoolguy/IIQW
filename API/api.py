@@ -8,7 +8,7 @@ app = Flask(__name__)
 api = Api(app)
 
 ## Connect to DB ##
-CONNECTION_STRING = "mongodb+srv://quotes_admin:fddyzyaqwMaTHQiR@quotes.ssb9s.mongodb.net/quotes.famous?retryWrites=true&w=majority"
+CONNECTION_STRING = "mongodb+srv://quotes_admin:fddyzyaqwMaTHQiR@quotes.ssb9s.mongodb.net/quotes?retryWrites=true&w=majority"
 
 try:
     client = pymongo.MongoClient(CONNECTION_STRING)
