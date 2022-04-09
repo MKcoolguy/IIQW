@@ -42,6 +42,15 @@ class QuotesByCategory(Resource):
             mimetype="application/json"
         )
 
+class OneQuote(Resource):
+    def get(self):
+        query = { "author": "Mark Twain" }
+        quotes = list(db.famous.find(query, {"_id": 0, "author": 1, "text": 1, "category": 1}).limit(1))
+        return Response(
+            response= json.dumps(quotes),
+            status=200,
+            mimetype="application/json"
+        )
 
 # Get quotes by keyword search
 class QuotesByKeyword(Resource):
@@ -67,6 +76,7 @@ class QuotesByKeyword(Resource):
 api.add_resource(QuotesByName, "/quotesbyauthor/<string:author>")
 api.add_resource(QuotesByKeyword, "/quotesbykeyword/")
 api.add_resource(QuotesByCategory, "/quotesbycategory/<string:category>")
+api.add_resource(OneQuote, "/onequote/")
 
 
 if __name__ == "__main__":
