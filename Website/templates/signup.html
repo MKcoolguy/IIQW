@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+<head>
+<title>Sign Up Page</title>
+{#<style>#}
+{#body#}
+{#{#}
+{#	font-family: Helvetica, sans-serif;#}
+{#	background-color: #000000;#}
+{#	color: #ffffff;#}
+{#}#}
+{#h1#}
+{#{#}
+{#	text-align: center;#}
+{#}#}
+{#table#}
+{#{#}
+{#	width:30%;#}
+{#	margin-left: auto;#}
+{#	margin-right: auto;	#}
+{#	border: 1px solid black;#}
+{#	background-color: #000000;#}
+{#}#}
+{##}
+{#td #}
+{#{#}
+{#  padding: 15px;#}
+{#}#}
+{##}
+{#.right#}
+{#{#}
+{#	width: 50%;#}
+{#}#}
+{##}
+{#div#}
+{#{#}
+{#	display: block;#}
+{#	margin: auto;#}
+{#	padding: 70px 0;#}
+{#}#}
+{##}
+{#.centerA {#}
+{#  height: 200px;#}
+{#  position: relative;#}
+{#}#}
+{##}
+{#.centerB {#}
+{#  margin: 0;#}
+{#  position: absolute;#}
+{#  left: 50%;#}
+{#  -ms-transform: translate(-50%, -50%);#}
+{#  transform: translate(-50%, -50%);#}
+{#}#}
+{##}
+{#</style>#}
+
+</head>
+
+<body>
+<nav>
+<ul>
+	<li class = "bold"> <a href="/">The Bionic Collaborative</a> </li>
+	<li><a href="/login">Login</a></li>
+{#    	<ul>#}
+{#        	<li><a href="/login">Login</a></li>#}
+{#        	<li><a href="/signup">Sign up</a></li>#}
+{#        </ul>#}
+    </li>
+{#        	<li><a href="{{ url_for('demo_upload_file') }}">Submit a quote</a></li> not sure why but this line creates an issue#}
+        	<li><a href="{{ url_for('generate_quote') }}">Generate quote</a></li>
+	<li>Preferences</li>
+</ul>
+</nav>
+
+
+<div class="jumbotron">
+	<h1 class="display-4">Sign Up!</h1>
+	<p class="lead">Want to customize preferences for your quotes? Sign up here!</p>
+	<hr class="my-4">
+	{% if smessage %}
+	  <div class="alert alert-success">
+		{{ smessage }}
+	  </div>
+	{% endif %}
+	{% if umessage %}
+	  <div class="alert alert-danger">
+		{{ umessage }}
+	  </div>
+	{% endif %}
+	<form action="/signup" method="post">
+		<div class="form-group">
+		<label for="exampleInputEmail1">Email address</label>
+		<input type="email" class="form-control" name="name"  placeholder="Enter email">
+		</div>
+		<div class="form-group">
+		<label for="exampleInputPassword1">Password</label>
+		<input type="password" class="form-control" name="password" placeholder="Password">
+		</div>
+		<button class="button" type="submit" name="submit" class="btn btn-primary">Create</button>
+	</form>
+ </div>
+
+</body>
+</html>

@@ -32,14 +32,14 @@
 <nav>
 <ul>
 	<li class = "bold"> <a href="/">The Bionic Collaborative</a> </li>
-	<li><a href="/demo_login">Login</a></li>
+	<li><a href="/login">Login</a></li>
 {#    	<ul>#}
 {#        	<li><a href="/demo_login">Login</a></li>#}
 {#        	<li><a href="/demo_signup">Sign up</a></li>#}
 {#        </ul>#}
     </li>
-        	<li><a href="{{ url_for('demo_upload') }}">Submit a quote</a></li>
-        	<li><a href="{{ url_for('demo_quote') }}">Generate quote</a></li>
+        	<li><a href="{{ url_for('upload') }}">Submit a quote</a></li>
+        	<li><a href="{{ url_for('generate_quote') }}">Generate quote</a></li>
 	<li>Preferences</li>
 </ul>
 
@@ -58,7 +58,7 @@
             {{ umessage }}
           </div>
         {% endif %}
-        <form action="/demo_login" method="post">
+        <form action="/login" method="post">
             <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" name="name"  placeholder="Enter email">
@@ -67,7 +67,7 @@
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" name="password" placeholder="Password">
             </div>
-            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+            <button class="button" type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
 
         <div class="row">
@@ -75,7 +75,8 @@
             <a href="/forgot_password" class="text-decoration-none">Forgot Password</a>
           </div>
           <div class="col-sm">
-            <a href="/demo_signup" class="text-decoration-none">Create Account</a>
+            <a href="/signup" class="text-decoration-none">Create Account</a>
+              <li><a href="/signup">Sign up</a></li>
           </div>
         </div>
     </div>
