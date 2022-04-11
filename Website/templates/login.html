@@ -5,26 +5,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
 <title>Login</title>
-{#<style>#}
-{#body#}
-{#{#}
-{#	font-family: Helvetica, sans-serif;#}
-{#	text-align: center;#}
-{#}#}
-{#table#}
-{#{#}
-{#	width:50%;#}
-{#	margin-left: auto;#}
-{#	margin-right: auto;#}
-{#}#}
-{##}
-{#td #}
-{#{#}
-{#  padding: 15px;#}
-{#  width: 15%;#}
-{#}#}
-{##}
-{#</style>#}
+
 </head>
 
 <body>
@@ -33,10 +14,7 @@
 <ul>
 	<li class = "bold"> <a href="/">The Bionic Collaborative</a> </li>
 	<li><a href="/login">Login</a></li>
-{#    	<ul>#}
-{#        	<li><a href="/demo_login">Login</a></li>#}
-{#        	<li><a href="/demo_signup">Sign up</a></li>#}
-{#        </ul>#}
+
     </li>
         	<li><a href="{{ url_for('upload') }}">Submit a quote</a></li>
         	<li><a href="{{ url_for('generate_quote') }}">Generate quote</a></li>
@@ -45,6 +23,7 @@
 
 </nav>
 
+<div class="login_box">
 	<div class="jumbotron">
         <h1 class="display-4">Log in</h1>
 {#        <hr class="my-4"> commented out to ignore line#}
@@ -72,7 +51,7 @@
 
         <div class="row">
           <div class="col-sm">
-            <a href="/forgot_password" class="text-decoration-none">Forgot Password</a>
+{#            <a href="/forgot_password" class="text-decoration-none">Forgot Password</a> need to implement functionality for forgot password#}
           </div>
           <div class="col-sm">
             <a href="/signup" class="text-decoration-none">Create Account</a>
@@ -80,5 +59,7 @@
           </div>
         </div>
     </div>
+</div>
+
 </body>
 </html>
