@@ -83,13 +83,13 @@ class QuotesByKeyword(Resource):
 # Return AI generated quote #
 
 class RandomGeneratedQuote(Resource):
-    def get(self):
+    def get(self, string):
         model = load_model(os.path.join("./models/", "quote_model.h5"))
         with open('models/tokenizer.pickle', 'rb') as handle:
             tokenizer = pickle.load(handle)
 
         max_sequence_len = 65
-        seed_text = "Live life like"
+        seed_text = string
         next_words = 20
 
         for _ in range(next_words):
@@ -117,7 +117,7 @@ api.add_resource(QuotesByName, "/quotesbyauthor/<string:author>")
 api.add_resource(QuotesByKeyword, "/quotesbykeyword/")
 api.add_resource(QuotesByCategory, "/quotesbycategory/<string:category>")
 api.add_resource(OneQuote, "/onequote/")
-api.add_resource(RandomGeneratedQuote, "/random/")
+api.add_resource(RandomGeneratedQuote, "/random/<string:string>")
 
 
 if __name__ == "__main__":
