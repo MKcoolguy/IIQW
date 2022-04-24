@@ -51,7 +51,7 @@ def demo_login():
 # Create account page
 @app.route('/demo_signup', methods=['GET', 'POST'])
 def demo_signup():
-    if request.method == 'POST':
+    if (request.method == 'POST'):
         email = request.form['name']
         password = request.form['password']
         auth.create_user_with_email_and_password(email, password)
