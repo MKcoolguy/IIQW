@@ -1,17 +1,18 @@
+
 body
 {
 	text-align:center;
 	color: #ffffff;
 	background-image: linear-gradient(black 20%, #464444 50%, #000000 80%);
 	background-attachment: fixed;
-
-	font-family: Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .textSize
 {
 	width: 35%;
 	line-height: 30px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .submitSize
@@ -26,6 +27,8 @@ body
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+
 	/*height: 40px;*/
 	/*width: 100px;*/
 
@@ -36,11 +39,34 @@ body
 	font-weight: bold;
 }
 
+.submit_box {
+    border-radius: 6px;
+    background-color: #605f5f;
+    display: inline-block;
+    margin: 80px 10px;
+    font-family: 'Roboto', sans-serif;
+    width: 400px;
+    height: 500px;
+}
+
+
+.login_box {
+    border-radius: 6px;
+    background-color: #605f5f;
+    display: inline-block;
+    margin: 80px 10px;
+    font-family: 'Roboto', sans-serif;
+    width: 400px;
+    height: 500px;
+}
+
 .box
 {
-	background-color: #605f5f;
+    background-color: #605f5f;
+    border-radius: 6px;
 	display: inline-block;
 	padding: 75px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .button {
@@ -54,6 +80,8 @@ body
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+
 
 }
 
@@ -61,6 +89,8 @@ footer
 {
 	position: absolute;
 	bottom: 0;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 nav {
@@ -71,7 +101,8 @@ nav {
     text-align: center;
     display: block;
     font-size: 1.5em;
-    color: #ffffff;}
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;}
 nav ul
 	{list-style-type: none;
     margin: 0;}

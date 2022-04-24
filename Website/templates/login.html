@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+<title>Login</title>
+
+</head>
+
+<body>
+
+<nav>
+<ul>
+	<li class = "bold"> <a href="/">The Bionic Collaborative</a> </li>
+	<li><a href="/login">Login</a></li>
+
+    </li>
+        	<li><a href="{{ url_for('upload') }}">Submit a quote</a></li>
+        	<li><a href="{{ url_for('generate_quote') }}">Generate quote</a></li>
+	<li>Preferences</li>
+</ul>
+
+</nav>
+
+<div class="login_box">
+	<div class="jumbotron">
+        <h1 class="display-4">Log in</h1>
+{#        <hr class="my-4"> commented out to ignore line#}
+        {% if smessage %}
+          <div class="alert alert-success">
+            {{ smessage }}
+          </div>
+        {% endif %}
+        {% if umessage %}
+          <div class="alert alert-danger">
+            {{ umessage }}
+          </div>
+        {% endif %}
+        <form action="/login" method="post">
+            <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" name="name"  placeholder="Enter email">
+            </div>
+            <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <button class="button" type="submit" name="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div class="row">
+          <div class="col-sm">
+{#            <a href="/forgot_password" class="text-decoration-none">Forgot Password</a> need to implement functionality for forgot password#}
+          </div>
+          <div class="col-sm">
+            <a href="/signup" class="text-decoration-none">Create Account</a>
+              <li><a href="/signup">Sign up</a></li>
+          </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

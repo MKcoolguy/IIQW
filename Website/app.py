@@ -1,6 +1,10 @@
 import pyrebase
 from flask import render_template, request, redirect, session, Flask
-import os
+import sys, os
+
+from sympy import Q
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from API import api
 
 # YOU CAN ONLY RUN THE APPLICATION FROM HERE
 
@@ -27,46 +31,56 @@ app = Flask(__name__)
 # The below function returns the html file we want to display in the user's browser
 # Default content type is HTML
 @app.route("/")
-def demo():
-    return render_template('demo.html')
+def home():
+    return render_template('home.html')
+
+
+@app.route("/quote", methods=['GET', 'POST'])
+def quote():
+    if request.method == 'POST':
+        string_seq = request.form.get('quote1')
+        ai_quote1 = api.get_ai_quote(string_seq)
+        #return ai_quote1
+        return render_template('home.html', quote_a = ai_quote1)
+    return render_template('home.html')
 
 
 # User Login and authentication
-@app.route('/demo_login', methods=['GET', 'POST'])
-def demo_login():
-    if (request.method == 'POST'):
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
         email = request.form['name']
         password = request.form['password']
         try:
             auth.sign_in_with_email_and_password(email, password)
             # user_id = auth.get_account_info(user['idToken'])
             # session['usr'] = user_id
-            return render_template('demo.html')
+            return render_template('home.html')
         except:
             unsuccessful = 'Please check your credentials'
-            return render_template('demo_login.html', umessage=unsuccessful)
-    return render_template('demo_login.html')
+            return render_template('login.html', umessage=unsuccessful)
+    return render_template('login.html')
 
 
 # Create account page
-@app.route('/demo_signup', methods=['GET', 'POST'])
-def demo_signup():
-    if (request.method == 'POST'):
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
         email = request.form['name']
         password = request.form['password']
         auth.create_user_with_email_and_password(email, password)
-        return render_template('demo.html')
-    return render_template('demo_signup.html')
+        return render_template('home.html')
+    return render_template('signup.html')
 
 
-@app.route('/demo_upload')  # upload page
-def demo_upload():
-    return render_template('demo_upload_file.html')
+@app.route('/upload')  # upload page
+def upload():
+    return render_template('submit_quote.html')
 
 
-@app.route('/demo_quote')  # generate quote page
-def demo_quote():
-    return render_template('demo_quote.html')
+@app.route('/generate_quote')  # generate quote page
+def generate_quote():
+    return render_template('generate_quote.html')
 
 
 @app.after_request
@@ -82,6 +96,10 @@ def add_header(r):
     return r
 
 
+
+
 # app.run() deploys the website
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
+    # disabling while playing with container for FLASK application
+    # app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))

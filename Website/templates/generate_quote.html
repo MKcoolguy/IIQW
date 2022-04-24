@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+<head>
+<title>Quote Page</title>
+
+<style>
+
+body
+{
+	text-align: center;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+table
+{
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;	
+	border: 1px solid black;
+}
+
+td 
+{
+  padding: 15px;
+  width: 15%;
+}
+
+img
+{
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<ul>
+	<li class = "bold"> <a href="/">The Bionic Collaborative</a> </li>
+	<li><a href{#    	<ul>#}
+{#        </ul>#}="/login">Login</a></li>
+
+    </li>
+        	<li><a href="{{ url_for('upload') }}">Submit a quote</a></li>
+        	<li><a href="{{ url_for('generate_quote') }}">Generate quote</a></li>
+	<li>Preferences</li>
+</ul>
+</nav>
+
+<h1>Here's your quote!</h1>
+<table>
+<tr><td>
+<img src="pic.png" alt="believe">
+</td></tr>
+
+<tr><td>
+{#<button onclick="location.href='home.html'" type="button">Go Back</button>#}
+<button class="button">New Quote</button>
+<a href="pic.png" download="quote">
+<button class="button" type="button">Download Quote</button> </a>
+</td></tr>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+<head>
+<title>Sign Up Page</title>
+
+</head>
+
+<body>
+<nav>
+<ul>
+	<li class = "bold"> <a href="/">The Bionic Collaborative</a> </li>
+	<li><a href="/login">Login</a></li>
+    </li>
+            <li><a href="{{ url_for('upload') }}">Submit a quote</a></li>
+            <li><a href="{{ url_for('generate_quote') }}">Generate quote</a></li>
+	<li>Preferences</li>
+</ul>
+</nav>
+
+
+<div class="jumbotron">
+	<h1 class="display-4">Sign Up!</h1>
+	<p class="lead">Want to customize preferences for your quotes? Sign up here!</p>
+	<hr class="my-4">
+	{% if smessage %}
+	  <div class="alert alert-success">
+		{{ smessage }}
+	  </div>
+	{% endif %}
+	{% if umessage %}
+	  <div class="alert alert-danger">
+		{{ umessage }}
+	  </div>
+	{% endif %}
+	<form action="/signup" method="post">
+		<div class="form-group">
+		<label for="exampleInputEmail1">Email address</label>
+		<input type="email" class="form-control" name="name"  placeholder="Enter email">
+		</div>
+		<div class="form-group">
+		<label for="exampleInputPassword1">Password</label>
+		<input type="password" class="form-control" name="password" placeholder="Password">
+		</div>
+		<button class="button" type="submit" name="submit" class="btn btn-primary">Create</button>
+	</form>
+ </div>
+
+</body>
+</html>
