@@ -1,3 +1,4 @@
+from email.quoprimime import quote
 from flask import Flask, Response, request
 from flask_restful import Api, Resource, reqparse
 import pymongo
@@ -15,7 +16,8 @@ app = Flask(__name__)
 api = Api(app)
 
 ## Connect to DB ##
-CONNECTION_STRING = "mongodb+srv://quotes_admin:fddyzyaqwMaTHQiR@quotes.ssb9s.mongodb.net/quotes?retryWrites=true&w=majority"
+#CONNECTION_STRING = "mongodb+srv://quotes_admin:fddyzyaqwMaTHQiR@quotes.ssb9s.mongodb.net/quotes?retryWrites=true&w=majority"
+CONNECTION_STRING = "mongodb+srv://matteo:VAFC2VKyMK0XAqdH@quotes.ssb9s.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 try:
     client = pymongo.MongoClient(CONNECTION_STRING)
@@ -121,10 +123,24 @@ api.add_resource(OneQuote, "/onequote/")
 api.add_resource(RandomGeneratedQuote, "/random/<string:string>")
 
 
-# Function get quote
+# Function to add quotes to db
+def add_user_quote(user_name, quote):
+    user_collection = db["users"]
+    post = {"user": user_name, "quote": quote}
+    user_collection.insert_one(post)
+
+# Function generate ai quote
 def get_ai_quote(my_text):
     my_quote = RandomGeneratedQuote()
     return my_quote.get(my_text)
 
-#my_quote = get_ai_quote("nice")
-#print(my_quote)
+# Function to get a random quote
+def get_random_quote():
+    famous_collection = db['famous']
+    quotes = famous_collection.aggregate([ { "$sample": { "size": 1 } } ])
+    quote_set = {}
+    for quote in quotes:
+        text = quote['text']
+        author = quote['author']
+        quote_set[text] = author
+    return quote_set

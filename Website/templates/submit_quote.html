@@ -22,9 +22,22 @@
 
 <h1>Fill Out the Form Below!</h1>
 
-<form>
+{% if smessage %}
+<div class="alert alert-success">
+  {{ smessage }}
+</div>
+{% endif %}
+{% if umessage %}
+<div class="alert alert-danger">
+  {{ umessage }}
+</div>
+{% endif %}
+
+<form action="/upload" method="post">
   <label for="quote"><h3>Quote:</h3></label>
-  <textarea rows="4" cols="50">Inspire someone!</textarea><br>
+  <!--<input type="text" name="userQuote1">-->
+  <textarea rows="4" cols="50" name="userQuote" placeholder="Inspire someone!"></textarea>
+  <br>
 {#  ------------------------------------------------------------Disabled for now ------------------------------------------------------------------#}
 {#  <h3>Select all that apply:</h3>#}
 {#  <input type="checkbox" id="ex1" name="age" value="ages">#}
@@ -33,17 +46,16 @@
 {#  <label for="ex2"> Motivational, for tough times</label><br>#}
 {#  <input type="checkbox" id="ex3" name="famous" value="famous">#}
 {#  <label for="ex3"> Quote by a famous person</label>#}
-  
+
+    <button class="button" type="submit">Submit</button>
+
 {#	<h3>Image (optional):</h3>#}
 {#  <input type="file" class="button" id="image" name="inputImage"><br>#}
 {#  <br>#}
     <br>
     <br>
-
-  <input type ="submit" class="button" >
 {#  <button class="button" onclick="location.href='home.html'" type="button">Go Back</button> #}
 {#  ----------------------------------------------------------- ------------------------------------------------------------------#}
-
 </form>
 </div>
 

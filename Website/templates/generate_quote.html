@@ -34,6 +34,10 @@ img
 	margin-left: auto;
 	margin-right: auto;
 }
+br {
+   display: block;
+   margin: 10px 0;
+}
 
 </style>
 </head>
@@ -53,20 +57,19 @@ img
 </ul>
 </nav>
 
-<h1>Here's your quote!</h1>
-<table>
-<tr><td>
-<img src="pic.png" alt="believe">
-</td></tr>
 
-<tr><td>
-{#<button onclick="location.href='home.html'" type="button">Go Back</button>#}
-<button class="button">New Quote</button>
-<a href="pic.png" download="quote">
-<button class="button" type="button">Download Quote</button> </a>
-</td></tr>
-
-</table>
+<!--Form for quote submission and two-way data binding-->
+<form action="{{ url_for('generate_quote') }}" method="post">
+	<table>
+	<div class="box">
+		<label for="quote">Enter word sequence:</label>
+		<input type="text" name="quote1"  placeholder="Example: nice and cool">
+		<br>
+		<label for="quote_received">{{quote_a}}</label>
+		<br>
+		<button class="button" type="submit">New Quote</button>
+	</div>
+	</table>
 
 </body>
 </html>

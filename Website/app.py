@@ -1,5 +1,7 @@
+from asyncio.windows_events import NULL
+from matplotlib.pyplot import get
 import pyrebase
-from flask import render_template, request, redirect, session, Flask
+from flask import render_template, request, redirect, session, Flask, url_for
 import sys, os
 
 from sympy import Q
@@ -30,9 +32,13 @@ app = Flask(__name__)
 # Use route() to tell flask what url should trigger our function
 # The below function returns the html file we want to display in the user's browser
 # Default content type is HTML
-@app.route("/")
+@app.route("/", methods=['GET'])
 def home():
-    return render_template('home.html')
+    try:
+        rand_quotes = api.get_random_quote()
+        return render_template('home.html', rand_quotes = rand_quotes)
+    except:
+        return render_template('home.html')
 
 
 @app.route("/quote", methods=['GET', 'POST'])
@@ -40,7 +46,6 @@ def quote():
     if request.method == 'POST':
         string_seq = request.form.get('quote1')
         ai_quote1 = api.get_ai_quote(string_seq)
-        #return ai_quote1
         return render_template('home.html', quote_a = ai_quote1)
     return render_template('home.html')
 
@@ -52,10 +57,9 @@ def login():
         email = request.form['name']
         password = request.form['password']
         try:
-            auth.sign_in_with_email_and_password(email, password)
-            # user_id = auth.get_account_info(user['idToken'])
-            # session['usr'] = user_id
-            return render_template('home.html')
+            user = auth.sign_in_with_email_and_password(email, password)
+            #return render_template('home.html')
+            return redirect(url_for("home"))
         except:
             unsuccessful = 'Please check your credentials'
             return render_template('login.html', umessage=unsuccessful)
@@ -73,13 +77,36 @@ def signup():
     return render_template('signup.html')
 
 
-@app.route('/upload')  # upload page
+# Submit a quote page. Only submits a quote if a user is currenly logged in and quote is not empty
+@app.route('/upload', methods = ['GET', 'POST'])
 def upload():
+    if request.method == 'POST':
+        try:
+            user_quote = request.form['userQuote']
+            # Check to see if user is logged in and quote is not empty.
+            # If condiiton passes then add quote to db and display success message.
+            if (user_quote.strip() != "" and auth.current_user != None):
+                successful = 'Successfully submitted your {0} quote'.format(user_quote)
+                api.add_user_quote(auth.current_user['email'], user_quote)
+                return render_template('submit_quote.html', umessage=successful)
+            elif (auth.current_user == None):
+                unsuccessful = 'You need to be logged in to submit quote'
+                return render_template('submit_quote.html', umessage=unsuccessful)
+            else:
+                return render_template('submit_quote.html', umessage="Can't submit empty quote value")
+        except:
+            unsuccessful = 'Unable to submit quote'
+            return render_template('submit_quote.html', umessage=unsuccessful)
     return render_template('submit_quote.html')
 
 
-@app.route('/generate_quote')  # generate quote page
+# Generate quoute page
+@app.route('/generate_quote', methods=['GET', 'POST'])  # generate quote page
 def generate_quote():
+    if request.method == 'POST':
+        string_seq = request.form.get('quote1')
+        ai_quote1 = api.get_ai_quote(string_seq)
+        return render_template('generate_quote.html', quote_a = ai_quote1)
     return render_template('generate_quote.html')
 
 

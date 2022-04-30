@@ -27,27 +27,19 @@
 <br>
 
 
-<form action="{{ url_for('quote') }}" method="post">
+	<br>
+	<br>
+	{% if rand_quotes is defined %}
+	{% for key, value in rand_quotes.items() %}
 	<div class="box">
-		<label for="quote">quote</label>
-		<input type="text" name="quote1"  placeholder="This is an example box A, quote will be here">
-		<button type="submit">Generate</button>
+			<p> {{ key }} </p>
+			<p> - {{ value }} </p>
 	</div>
-	<div class="box">
-		{{quote_a}}
-	</div>
-
 	<br>
 	<br>
+	{% endfor %}
+	{% endif %}
 
-	<div class="box">This is an example box C, quote will be here</div>
-	<div class="box">This is an example box D, quote will be here</div>
-
-	<br>
-	<br>
-
-	<div class="box">This is an example box E, quote will be here</div>
-	<div class="box">This is an example box F, quote will be here</div>
 
 {#<footer>Project created by: Kristoffer Hendricks, Matteo Kitic, Robert Sima, Constance Yang</footer>#}
 
