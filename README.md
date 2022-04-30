@@ -23,7 +23,6 @@ pip install Flask
 pip install pyrebase
 pip install pymongo
 pip install tensorflow
-
 ```
 ## Authors
 Constance Yang, Kristoffer Hendricks, Matteo Kitic, Robert Sima
