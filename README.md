@@ -9,7 +9,7 @@ Description.....
 ## Requires
 Flask, Bootstrap
 <p>
-You're only able to run the application from app.py
+You're only able to run the application from app.py. It is recommended that you use Visual Studio Code to run the applicaiton.  
 </p>
 
 ```
@@ -17,17 +17,13 @@ Install Firebase CLI to host the site:
   npm install -g firebase-tools
 ```
 
-Anaconda:
-```
-conda install -c conda-forge flask
-conda install -c conda-forge flask-bootstrap
-```
 pip:
 ```
 pip install Flask
-pip install flask-bootstrap
-pip install requirements.txt
 pip install pyrebase
+pip install pymongo
+pip install tensorflow
+
 ```
 ## Authors
 Constance Yang, Kristoffer Hendricks, Matteo Kitic, Robert Sima
