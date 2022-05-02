@@ -1,10 +1,8 @@
 from asyncio.windows_events import NULL
-from matplotlib.pyplot import get
 import pyrebase
 from flask import render_template, request, redirect, session, Flask, url_for
 import sys, os
 
-from sympy import Q
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from API import api
 

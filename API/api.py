@@ -1,4 +1,3 @@
-from email.quoprimime import quote
 from flask import Flask, Response, request
 from flask_restful import Api, Resource, reqparse
 import pymongo
