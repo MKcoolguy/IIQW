@@ -25,6 +25,7 @@ pip install Flask
 pip install pyrebase
 pip install pymongo
 pip install tensorflow
+pip install flask-restful
 python3 -m pip install pymongo[srv] **if you can't connect to the db run this cmd**
 ```
 ## Authors
