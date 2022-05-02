@@ -4,8 +4,10 @@
 
 <p>
 </p>
-Description.....
-
+The idea of this project is for the user to be able to generate AI quotes, submit quotes, and be able to retrieve quotes.
+In order to do this this program has been implemented via Python, Flask, Bootstrap, and many other complexities in order to operate successfully.
+As a user, you should be able to login or signup to the website, browse through the website, interact with the website as mentioned earlier, and logout of the website.
+Thank you so much for reading in to the details, and please follow further details below:
 ## Requires
 Flask, Bootstrap
 <p>
