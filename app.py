@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 import pyrebase
 from flask import render_template, request, redirect, session, Flask, url_for
 import sys, os
