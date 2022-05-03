@@ -1,3 +1,4 @@
+# from crypt import methods
 import pyrebase
 from flask import render_template, request, redirect, session, Flask, url_for
 import sys, os
@@ -29,6 +30,8 @@ app = Flask(__name__, template_folder='templates')
 # Use route() to tell flask what url should trigger our function
 # The below function returns the html file we want to display in the user's browser
 # Default content type is HTML
+
+        
 @app.route("/", methods=['GET'])
 def home():
     try:
@@ -36,6 +39,15 @@ def home():
         return render_template('home.html', rand_quotes = rand_quotes)
     except:
         return render_template('home.html')
+
+
+# @app.route("/feed-quote", methods = ['GET'])
+# def feedquote():
+#     try: 
+#         feedquote = api.get_random_quote()
+#         return render_template('home.html', feedquote = feedquote)
+#     except:
+#         return render_template('home.html')
 
 
 @app.route("/quote", methods=['GET', 'POST'])
@@ -97,7 +109,7 @@ def upload():
     return render_template('submit_quote.html')
 
 
-# Generate quoute page
+# Generate quote page
 @app.route('/generate_quote', methods=['GET', 'POST'])  # generate quote page
 def generate_quote():
     if request.method == 'POST':

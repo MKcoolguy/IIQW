@@ -13,13 +13,14 @@
     </li>
         	<li><a href="{{ url_for('upload') }}">Submit a quote</a></li>
         	<li><a href="{{ url_for('generate_quote') }}">Generate quote</a></li>
-	<li>Preferences</li>
+	<!-- <li>Preferences</li> --> 
+	<!-- ^^ temporarily disabled -->	
 </ul>
 </nav>
 <br>
 <h1 class="bold">The Bionic Collaborative</h1>
 <br>
-<h2>A collaborative project combining human and artificial intelligence quotes</h2>
+<h2>A collaborative project combining human and artificial intelligence</h2>
 <br>
 <input class = "textSize" type= "text" placeholder="Search for a quote...">
 <button class="button"> Submit </button>
@@ -40,7 +41,17 @@
 	{% endfor %}
 	{% endif %}
 
-
+	
+	<!-- <br>
+	<br>
+	{% if feedquote is defined %}
+	{% for key, value in rand_quotes.items() %}
+	<div class="box">
+		<p> {{ key }} </p>
+	</div>
+	{% endfor %}
+	{% endif %} -->
+			
 {#<footer>Project created by: Kristoffer Hendricks, Matteo Kitic, Robert Sima, Constance Yang</footer>#}
 
 </body>

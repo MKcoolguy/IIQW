@@ -53,23 +53,26 @@ br {
     </li>
         	<li><a href="{{ url_for('upload') }}">Submit a quote</a></li>
         	<li><a href="{{ url_for('generate_quote') }}">Generate quote</a></li>
-	<li>Preferences</li>
+	<!-- <li>Preferences</li> --> 
+	<!-- ^^ temporarily disabled -->
 </ul>
 </nav>
 
 
 <!--Form for quote submission and two-way data binding-->
 <form action="{{ url_for('generate_quote') }}" method="post">
-	<table>
+	<!-- <table> -->
+	<!-- <div class="box"> -->
+	<h2 label for="quote">Enter word sequence:</h2>		
+	<input class = "textSize" type="text" name="quote1"  placeholder="Enter some words...">
+	<button class="button" type="submit">New Quote</button>
+	<br>
+	<br>
 	<div class="box">
-		<label for="quote">Enter word sequence:</label>
-		<input type="text" name="quote1"  placeholder="Example: nice and cool">
-		<br>
 		<label for="quote_received">{{quote_a}}</label>
 		<br>
-		<button class="button" type="submit">New Quote</button>
 	</div>
-	</table>
+	<!-- </table> -->
 
 </body>
 </html>
