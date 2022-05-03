@@ -24,7 +24,7 @@ auth = firebase.auth()
 
 # Argument is the name of the application's module or package. __name__ is a convenient shortcut for this.
 # This is needed so flask knows where to look for resources such as templates and static files.
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 
 # Use route() to tell flask what url should trigger our function
