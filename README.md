@@ -18,6 +18,7 @@ pip:
 ```
 pip install Flask
 pip install pyrebase
+pip install pyrebase4 **use this if pyrebase is giving request version issues**
 pip install pymongo
 pip install tensorflow
 pip install flask-restful

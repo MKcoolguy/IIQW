@@ -86,8 +86,8 @@ class QuotesByKeyword(Resource):
 # Return AI generated quote #
 class RandomGeneratedQuote(Resource):
     def get(self, string):
-        model = load_model(os.path.join("API\models", "quote_model.h5"))
-        with open('API\models/tokenizer.pickle', 'rb') as handle:
+        model = load_model(os.path.join("IIQW/API/models", "quote_model.h5"))
+        with open('IIQW/API/models/tokenizer.pickle', 'rb') as handle:
             tokenizer = pickle.load(handle)
 
         max_sequence_len = 65
