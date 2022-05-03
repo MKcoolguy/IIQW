@@ -9,7 +9,7 @@ As a user, you should be able to login or signup to the website, browse through 
 Thank you so much for reading in to the details, and please follow further details below:
  </p>
 
- <h1> Link to Deployment <h1>
+ <h1> Link to Deployment </h1>
  <p> https://protected-spire-87455.herokuapp.com </p>
   
 ## Requires
