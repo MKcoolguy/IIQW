@@ -8,9 +8,20 @@ body
     font-family: 'Roboto', sans-serif;
 }
 
-.textSize
+.alignLeft {
+    text-align: left;
+    margin-left: 17%;
+}
+
+.textSize{
+    width: 30%;
+	line-height: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.submitTextSize
 {
-	width: 35%;
+	width: 65%;
 	line-height: 30px;
     font-family: 'Roboto', sans-serif;
 }
@@ -57,7 +68,7 @@ body
     margin: 80px 10px;
     font-family: 'Roboto', sans-serif;
     width: 400px;
-    height: 500px;
+    height: 400px;
 }
 
 .box
