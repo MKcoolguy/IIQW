@@ -27,5 +27,14 @@ pip install tensorflow
 pip install flask-restful
 pip install pymongo[srv] **if you can't connect to the db run this cmd**
 ```
+##To-do
+<p>
+ - Reformat 'login' page
+ - Reformat 'submit a quote' page
+ - Reformat quote boxes to keep consistency
+ - Create functional 'feed' page that displays 30 quotes. 
+ - Create method to search for quotes.
+ </p>
+
 ## Authors
 Constance Yang, Kristoffer Hendricks, Matteo Kitic, Robert Sima
