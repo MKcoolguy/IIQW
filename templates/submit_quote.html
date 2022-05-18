@@ -21,7 +21,9 @@
 
 <div class="submit_box">
 
-<h1>Fill Out the Form Below!</h1>
+<h1>Submit a quote</h1>
+
+<p> You can use this form to submit your own quote as a contribution to the collaborative! Our machine learning model will use your quotes to learn! </p>
 
 {% if smessage %}
 <div class="alert alert-success">
@@ -35,9 +37,9 @@
 {% endif %}
 
 <form action="/upload" method="post">
-  <label for="quote"><h3>Quote:</h3></label>
+  <label for="quote"><h3>Quote</h3></label>
   <!--<input type="text" name="userQuote1">-->
-  <textarea rows="4" cols="50" name="userQuote" placeholder="Inspire someone!"></textarea>
+  <textarea rows="4" cols="50" name="userQuote" placeholder="Type a quote here..."></textarea>
   <br>
 {#  ------------------------------------------------------------Disabled for now ------------------------------------------------------------------#}
 {#  <h3>Select all that apply:</h3>#}
@@ -47,6 +49,8 @@
 {#  <label for="ex2"> Motivational, for tough times</label><br>#}
 {#  <input type="checkbox" id="ex3" name="famous" value="famous">#}
 {#  <label for="ex3"> Quote by a famous person</label>#}
+
+<br>
 
     <button class="button" type="submit">Submit</button>
 

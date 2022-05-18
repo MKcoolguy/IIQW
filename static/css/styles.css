@@ -13,6 +13,10 @@ body
     margin-left: 17%;
 }
 
+textarea {
+width: 80%;
+}
+
 .textSize{
     width: 30%;
 	line-height: 30px;
@@ -57,7 +61,7 @@ body
     margin: 80px 10px;
     font-family: 'Roboto', sans-serif;
     width: 400px;
-    height: 500px;
+    height: 400px;
 }
 
 
