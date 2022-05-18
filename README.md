@@ -27,7 +27,7 @@ pip install tensorflow
 pip install flask-restful
 pip install pymongo[srv] **if you can't connect to the db run this cmd**
 ```
-##To-do
+## To-do
 <p>
  - Reformat 'login' page <br />
  - Reformat 'submit a quote' page <br />
