@@ -29,8 +29,6 @@ pip install pymongo[srv] **if you can't connect to the db run this cmd**
 ```
 ## To-do
 <p>
- - Reformat 'login' page <br />
- - Reformat 'submit a quote' page <br />
  - Reformat quote boxes to keep consistency <br />
  - Create functional 'feed' page that displays 30 quotes. <br />
  - Create method to search for quotes.
