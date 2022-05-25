@@ -19,6 +19,10 @@ config = {
     "appId": "1:260325577865:web:a1969fa00e43030955e258"
 }
 
+homeQuoteList = []
+for x in range(10):
+    homeQuoteList.append(api.get_random_quote)
+
 firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
 
@@ -35,8 +39,12 @@ app = Flask(__name__, template_folder='templates')
 @app.route("/", methods=['GET'])
 def home():
     try:
+        homeQuoteList = []
+        x = 0
+        for x in range(10):
+            homeQuoteList.append(api.get_random_quote())
         rand_quotes = api.get_random_quote()
-        return render_template('home.html', rand_quotes = rand_quotes)
+        return render_template('home.html', len = len(homeQuoteList), homeQuoteList = homeQuoteList, rand_quotes= rand_quotes)
     except:
         return render_template('home.html')
 

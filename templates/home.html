@@ -26,22 +26,22 @@
 <button class="button"> Submit </button>
 <br>
 <br>
+	<!-- ------------------------------- loop quote method --------------------- -->
 
+	<br>
+	<br>
+		{%for item in homeQuoteList %}
+			{% for key, value in item.items() %}
+				<div class="box">
+					<p> {{ key }} </p>
+					<p> - {{ value }} </p>
+				</div>
+			<br>
+			<br>
+			{% endfor %}
+		{%endfor%} 
 
-	<br>
-	<br>
-	{% if rand_quotes is defined %}
-	{% for key, value in rand_quotes.items() %}
-	<div class="box">
-			<p> {{ key }} </p>
-			<p> - {{ value }} </p>
-	</div>
-	<br>
-	<br>
-	{% endfor %}
-	{% endif %}
-
-	
+	<!-- ------------------------------- Feedquote method --------------------- -->
 	<!-- <br>
 	<br>
 	{% if feedquote is defined %}
@@ -51,6 +51,23 @@
 	</div>
 	{% endfor %}
 	{% endif %} -->
+
+		<!-- ------------------------------- loop quote method --------------------- -->
+
+		<!-- {%for i in range(0, 10)%}
+		<br>
+		<br>
+		{% if rand_quotes is defined %}
+			{% for key, value in rand_quotes.items() %}
+				<div class="box">
+					<p> {{ key }} </p>
+					<p> - {{ value }} </p>
+				</div>
+			<br>
+			<br>
+			{% endfor %}
+		{% endif %}
+	{%endfor%} -->
 			
 {#<footer>Project created by: Kristoffer Hendricks, Matteo Kitic, Robert Sima, Constance Yang</footer>#}
 
